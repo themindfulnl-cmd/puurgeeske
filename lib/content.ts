@@ -1,17 +1,45 @@
 import fs from 'fs';
 import path from 'path';
+import { cache } from 'react';
 
 const dataDir = path.join(process.cwd(), 'lib/data');
 
-// Helper to read JSON files
-function readJsonFile<T>(filename: string): T {
+/**
+ * Content store.
+ *
+ * Reads are memoised per render pass, so a page that needs reviews, events and
+ * config does one read of each instead of one per component.
+ *
+ * Writes only work where the filesystem is writable. On Vercel the serverless
+ * filesystem is read-only and ephemeral, so a "save" in the admin panel used to
+ * report success and change nothing. It now fails loudly instead.
+ */
+
+export class ReadOnlyContentError extends Error {
+  constructor() {
+    super(
+      'De inhoud kan op deze omgeving niet worden opgeslagen. ' +
+        'Op Vercel is het bestandssysteem alleen-lezen — wijzigingen moeten via de repository.'
+    );
+    this.name = 'ReadOnlyContentError';
+  }
+}
+
+/** Vercel sets VERCEL=1 on every deployment. */
+function isReadOnlyEnvironment(): boolean {
+  return process.env.VERCEL === '1' || process.env.CONTENT_READONLY === '1';
+}
+
+function readJsonFileUncached<T>(filename: string): T {
   const filePath = path.join(dataDir, filename);
   const fileContents = fs.readFileSync(filePath, 'utf8');
   return JSON.parse(fileContents) as T;
 }
 
-// Helper to write JSON files
+const readJsonFile = cache(readJsonFileUncached) as <T>(filename: string) => T;
+
 function writeJsonFile<T>(filename: string, data: T): void {
+  if (isReadOnlyEnvironment()) throw new ReadOnlyContentError();
   const filePath = path.join(dataDir, filename);
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
 }
