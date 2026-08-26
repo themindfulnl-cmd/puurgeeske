@@ -56,11 +56,8 @@ export function Reveal({
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    // Respect the OS setting rather than animating regardless.
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      setShown(true);
-      return;
-    }
+    // prefers-reduced-motion is handled in CSS — the media query pins these
+    // elements visible, so there is nothing to do here when it is set.
     return observe(el, () => setShown(true));
   }, []);
 

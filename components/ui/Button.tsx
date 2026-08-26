@@ -43,13 +43,14 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     ({ className, variant, size, asChild = false, children, ...props }, ref) => {
         const classes = cn(buttonVariants({ variant, size, className }))
 
-        if (asChild && React.isValidElement(children)) {
-            const child = children as React.ReactElement<{ className?: string }>
-            return React.cloneElement(child, {
+        // asChild renders the child (usually an <a>) with the button's styles.
+        // The ref is typed for a <button> and the child is not one, so it is
+        // deliberately not forwarded here.
+        if (asChild && React.isValidElement<{ className?: string }>(children)) {
+            return React.cloneElement(children, {
                 ...props,
-                ref,
-                className: cn(classes, child.props.className),
-            } as Partial<unknown> as never)
+                className: cn(classes, children.props.className),
+            } as React.HTMLAttributes<HTMLElement>)
         }
 
         return (
