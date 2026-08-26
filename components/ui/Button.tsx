@@ -34,17 +34,28 @@ const buttonVariants = cva(
 export interface ButtonProps
     extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
+    /** Render the child element instead of a <button>, keeping the styles.
+     *  Use for links — a nested <a> inside <button> is invalid HTML. */
     asChild?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-    ({ className, variant, size, asChild = false, ...props }, ref) => {
+    ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+        const classes = cn(buttonVariants({ variant, size, className }))
+
+        if (asChild && React.isValidElement(children)) {
+            const child = children as React.ReactElement<{ className?: string }>
+            return React.cloneElement(child, {
+                ...props,
+                ref,
+                className: cn(classes, child.props.className),
+            } as Partial<unknown> as never)
+        }
+
         return (
-            <button
-                className={cn(buttonVariants({ variant, size, className }))}
-                ref={ref}
-                {...props}
-            />
+            <button className={classes} ref={ref} {...props}>
+                {children}
+            </button>
         )
     }
 )
