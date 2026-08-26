@@ -47,14 +47,14 @@ export default function BlogPage() {
               <Link
                 href={`/blog/${post.slug}`}
                 key={post.id}
-                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100 hover:-translate-y-1"
+                className="group bg-white rounded-[2rem] overflow-hidden shadow-sm border border-stone-100 hover-lift hover-zoom"
               >
                 {/* Image */}
                 <div className="aspect-[16/10] overflow-hidden bg-stone-100">
                   <img
                     src={post.image || "/images/blog-placeholder.jpg"}
                     alt={post.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover"
                   />
                 </div>
 

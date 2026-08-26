@@ -49,7 +49,7 @@ export function Navbar() {
                 className={cn(
                     "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
                     isScrolled
-                        ? "bg-background/80 backdrop-blur-md shadow-sm border-b border-border/40 py-2"
+                        ? "bg-background shadow-sm border-b border-border/40 py-2"
                         : "bg-transparent py-4"
                 )}
             >
@@ -104,7 +104,7 @@ export function Navbar() {
                     ))}
                     <div className="w-16 h-[1px] bg-stone-200 my-4" />
                     <Button
-                        className="w-full max-w-sm h-14 rounded-full text-lg shadow-xl bg-stone-800 text-white hover:bg-stone-700"
+                        className="w-full max-w-sm h-14 rounded-full text-lg bg-stone-800 text-white hover:bg-stone-700"
                         size="lg"
                         onClick={() => setIsMobileMenuOpen(false)}
                     >

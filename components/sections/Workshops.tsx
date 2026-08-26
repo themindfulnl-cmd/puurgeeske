@@ -1,5 +1,4 @@
 import { Button } from "@/components/ui/Button";
-import { Reveal } from "@/components/ui/Reveal";
 import type { Event } from "@/lib/content";
 
 const nlDate = new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "short" });
@@ -28,7 +27,7 @@ export function Workshops({ events }: { events: Event[] }) {
         </div>
 
         {events.length === 0 ? (
-          <Reveal className="max-w-xl mx-auto text-center bg-[#FDFBF7] border border-stone-100 rounded-[2rem] p-12">
+          <div className="max-w-xl mx-auto text-center bg-[#FDFBF7] border border-stone-100 rounded-[2rem] p-12">
             <p className="text-stone-600 font-light leading-relaxed text-lg">
               Er staat op dit moment geen workshop gepland. Wil je weten wanneer de
               volgende er is? Stuur me gerust een bericht — dan laat ik het je weten.
@@ -38,12 +37,12 @@ export function Workshops({ events }: { events: Event[] }) {
                 <a href="/contact">Neem contact op</a>
               </Button>
             </div>
-          </Reveal>
+          </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {events.map((event, index) => (
-              <Reveal key={event.id} delay={index * 90}>
-                <div className="group relative h-full bg-white rounded-[2rem] p-8 hover:shadow-xl transition-all duration-500 border border-stone-100 hover:-translate-y-1">
+              <div key={event.id}>
+                <div className="group relative h-full bg-white rounded-[2rem] p-8 border border-stone-100 shadow-sm hover-lift">
                   <div className="absolute top-8 right-8 text-right">
                     <span className="block text-2xl font-serif italic text-[#D4A373]">
                       {formatDate(event.date)}
@@ -84,7 +83,7 @@ export function Workshops({ events }: { events: Event[] }) {
                     </div>
                   </div>
                 </div>
-              </Reveal>
+              </div>
             ))}
           </div>
         )}

@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/ui/Reveal";
 import { Picture } from "@/components/ui/Picture";
 import { FilmPlayer } from "@/components/ui/FilmPlayer";
 import { Button } from "@/components/ui/Button";
@@ -11,15 +10,12 @@ const POSTER_WIDTHS = [480, 768, 1024, 1440, 1920];
 export function VideoHero() {
   return (
     <section className="relative bg-[#FDFBF7] overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
-      <div className="absolute inset-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-[-20%] left-[10%] w-[800px] h-[800px] bg-[#E6D5C3]/10 rounded-full blur-[120px]" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] bg-[#C8B6A6]/10 rounded-full blur-[100px]" />
-      </div>
+
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           {/* LEFT — the brand line */}
-          <Reveal className="w-full lg:w-[38%] text-center lg:text-left" from="up">
+          <div className="w-full lg:w-[38%] text-center lg:text-left anim-in">
             <Picture
               name="logo"
               widths={[224, 320, 448]}
@@ -45,15 +41,15 @@ export function VideoHero() {
                 Boek een les
               </Button>
             </div>
-          </Reveal>
+          </div>
 
           {/* RIGHT — the film */}
-          <Reveal className="w-full lg:w-[62%]" from="scale" delay={100}>
+          <div className="w-full lg:w-[62%] anim-in anim-d1">
             <FilmPlayer
               base="intro"
               posterName="intro-poster"
               posterWidths={POSTER_WIDTHS}
-              posterSizes="(max-width: 1024px) 100vw, 62vw"
+              posterSizes="(max-width: 640px) 62vw, (max-width: 1024px) 85vw, 62vw"
               alt="Geeske stelt zich voor"
               buttonLabel="Speel de introductievideo af"
               priority
@@ -61,7 +57,7 @@ export function VideoHero() {
             <p className="mt-4 text-sm text-stone-500 text-center lg:text-left">
               Introductie · 1 min 30
             </p>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

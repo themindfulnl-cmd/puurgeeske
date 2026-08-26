@@ -1,4 +1,3 @@
-import { Reveal } from "@/components/ui/Reveal";
 import { Picture } from "@/components/ui/Picture";
 
 export function About() {
@@ -6,7 +5,7 @@ export function About() {
     <section className="py-24 bg-white overflow-hidden">
       <div className="container mx-auto px-4 md:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <Reveal from="left" className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-8 order-2 lg:order-1 reveal">
             <div className="space-y-4">
               <h2 className="text-sm font-medium tracking-[0.3em] text-stone-500 uppercase border-b border-stone-200 pb-2 inline-block">
                 Mijn Verhaal
@@ -32,7 +31,7 @@ export function About() {
 
             <div className="pt-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="p-8 bg-[#FDFBF7] border border-stone-100 rounded-[2rem] hover:shadow-lg transition-shadow duration-500">
+                <div className="p-8 bg-[#FDFBF7] border border-stone-100 rounded-[2rem] hover-lift">
                   <h4 className="font-serif text-xl italic mb-3 text-stone-800">
                     Veilige Haven
                   </h4>
@@ -40,7 +39,7 @@ export function About() {
                     Een plek waar je jezelf mag zijn, zonder oordeel.
                   </p>
                 </div>
-                <div className="p-8 bg-[#FDFBF7] border border-stone-100 rounded-[2rem] hover:shadow-lg transition-shadow duration-500">
+                <div className="p-8 bg-[#FDFBF7] border border-stone-100 rounded-[2rem]">
                   <h4 className="font-serif text-xl italic mb-3 text-stone-800">
                     Persoonlijk
                   </h4>
@@ -50,10 +49,10 @@ export function About() {
                 </div>
               </div>
             </div>
-          </Reveal>
+          </div>
 
-          <Reveal from="right" className="order-1 lg:order-2 relative">
-            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl rotate-2 hover:rotate-0 transition-transform duration-500">
+          <div className="order-1 lg:order-2 relative reveal">
+            <div className="relative z-10 rounded-[2rem] overflow-hidden shadow-sm">
               <Picture
                 name="yurt-selfie"
                 widths={[400, 640, 816]}
@@ -65,7 +64,7 @@ export function About() {
               />
             </div>
             <div className="absolute top-10 right-10 w-full h-full border-4 border-[#FDFBF7] rounded-[2rem] -z-10 bg-[#FAF9F6]" />
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

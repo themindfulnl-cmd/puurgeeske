@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -78,8 +79,18 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="nl">
+      <head>
+        {/* Runs before first paint, so revealed sections never flash in and
+            back out. Without it they simply stay visible. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.documentElement.classList.add('js')",
+          }}
+        />
+      </head>
       <body className={`${inter.variable} ${jakarta.variable} antialiased`}>
         {children}
+        <ScrollReveal />
       </body>
     </html>
   );

@@ -1,6 +1,5 @@
 import { Flower2, Heart, Activity, Wind, User } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/Card";
-import { Reveal } from "@/components/ui/Reveal";
 import { Picture } from "@/components/ui/Picture";
 
 const services = [
@@ -46,10 +45,7 @@ export function Services() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center mb-24">
-          <Reveal
-            from="left"
-            className="relative rounded-[3rem] overflow-hidden shadow-2xl aspect-[4/3] lg:aspect-auto lg:h-[600px] border-4 border-white"
-          >
+          <div className="relative rounded-[3rem] overflow-hidden shadow-sm aspect-[4/3] lg:aspect-auto lg:h-[600px] border-4 border-white reveal hover-zoom">
             <Picture
               name="group-beach"
               widths={[480, 768, 1024]}
@@ -68,12 +64,12 @@ export function Services() {
                 Samen bewegen in de natuur, verbinden met elkaar en jezelf.
               </p>
             </div>
-          </Reveal>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {services.map((service, index) => (
-              <Reveal key={service.title} delay={index * 90}>
-                <Card className="h-full hover:shadow-xl transition-all duration-500 border-none bg-white/80 backdrop-blur-sm shadow-sm hover:-translate-y-1 rounded-[2rem] p-2">
+              <div key={service.title}>
+                <Card className="h-full border border-stone-100 bg-white shadow-sm rounded-[2rem] p-2 hover-lift">
                   <CardHeader>
                     <div className="w-14 h-14 rounded-2xl bg-[#FDFBF7] flex items-center justify-center mb-4 text-[#D4A373]">
                       <service.icon className="h-6 w-6" strokeWidth={1.5} />
@@ -88,7 +84,7 @@ export function Services() {
                     </p>
                   </CardContent>
                 </Card>
-              </Reveal>
+              </div>
             ))}
           </div>
         </div>

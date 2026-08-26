@@ -67,33 +67,67 @@ h6 {
   /* Slightly darker for headings */
 }
 /* ---------------------------------------------------------------
-   Scroll reveals. These replaced framer-motion on every section —
-   same feel, no JS animation runtime.
-   --------------------------------------------------------------- */
-[data-reveal] {
-  opacity: 0;
-  transition:
-    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-  will-change: opacity, transform;
-}
-[data-reveal="up"] { transform: translate3d(0, 24px, 0); }
-[data-reveal="left"] { transform: translate3d(-20px, 0, 0); }
-[data-reveal="right"] { transform: translate3d(20px, 0, 0); }
-[data-reveal="scale"] { transform: scale(0.97); }
+   Motion.
 
-[data-reveal][data-shown="true"] {
-  opacity: 1;
-  transform: none;
-  will-change: auto;
+   Only opacity and transform are ever animated. Both are composited on
+   the GPU, so they cost nothing to paint — unlike filter/backdrop-filter,
+   which is what made the old hero take five seconds to appear on a phone.
+   Nothing in here triggers layout or a repaint.
+   --------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Above the fold: pure CSS, fires on load, no JavaScript involved. */
+  .anim-in {
+    animation: anim-in 0.55s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .anim-d1 { animation-delay: 0.07s; }
+  .anim-d2 { animation-delay: 0.14s; }
+  .anim-d3 { animation-delay: 0.21s; }
+
+  @keyframes anim-in {
+    from { opacity: 0; transform: translate3d(0, 14px, 0); }
+    to   { opacity: 1; transform: none; }
+  }
+
+  /* Below the fold: visible by default. The .js class is only set by an
+     inline script, so if that never runs the content is simply already
+     on screen — it can never get stuck invisible. */
+  html.js .reveal {
+    opacity: 0;
+    transform: translate3d(0, 14px, 0);
+    transition: opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  html.js .reveal.is-in {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Hover polish is desktop-only, so a touch device never pays for it. */
+@media (hover: hover) and (pointer: fine) {
+  .hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+  .hover-lift:hover {
+    transform: translate3d(0, -4px, 0);
+    box-shadow: 0 12px 28px rgba(60, 50, 40, 0.09);
+  }
+  .hover-zoom img {
+    transition: transform 0.5s ease;
+  }
+  .hover-zoom:hover img {
+    transform: scale(1.04);
+  }
+  .hover-pop {
+    transition: transform 0.2s ease;
+  }
+  .hover-pop:hover {
+    transform: scale(1.05);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
   *,
   *::before,
   *::after {

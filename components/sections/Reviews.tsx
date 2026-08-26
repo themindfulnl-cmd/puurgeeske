@@ -1,5 +1,4 @@
 import { Star, Quote } from "lucide-react";
-import { Reveal } from "@/components/ui/Reveal";
 import type { Review } from "@/lib/content";
 
 const nlMonthYear = new Intl.DateTimeFormat("nl-NL", {
@@ -44,8 +43,8 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
           {reviews.map((review, index) => (
-            <Reveal key={review.id} delay={index * 90}>
-              <figure className="relative h-full bg-white rounded-[2rem] p-8 shadow-sm hover:shadow-xl transition-all duration-500 border border-stone-100">
+            <div key={review.id}>
+              <figure className="relative h-full bg-white rounded-[2rem] p-8 shadow-sm border border-stone-100 hover-lift">
                 <Quote
                   aria-hidden="true"
                   className="absolute top-6 right-6 h-8 w-8 text-[#D4A373]/20"
@@ -78,7 +77,7 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
                   </figcaption>
                 </div>
               </figure>
-            </Reveal>
+            </div>
           ))}
         </div>
       </div>
