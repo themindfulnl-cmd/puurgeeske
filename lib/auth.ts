@@ -96,13 +96,23 @@ export async function isAuthenticated(): Promise<boolean> {
 
 /** Constant-time password check. No default — an unset ADMIN_PASSWORD
  *  disables login rather than falling back to a password in the repo. */
-export function verifyPassword(password: string): boolean {
-  const expected = process.env.ADMIN_PASSWORD;
-  if (!expected || expected.length === 0) return false;
-  return timingSafeEqual(password, expected);
+export function verifyCredentials(username: string, password: string): boolean {
+  const adminUser = process.env.ADMIN_USERNAME;
+  const adminPassword = process.env.ADMIN_PASSWORD;
+  const editorUser = process.env.EDITOR_USERNAME;
+  const editorPassword = process.env.EDITOR_PASSWORD;
+
+  const adminMatch = Boolean(adminUser && adminPassword &&
+    timingSafeEqual(username, adminUser) && timingSafeEqual(password, adminPassword));
+  const editorMatch = Boolean(editorUser && editorPassword &&
+    timingSafeEqual(username, editorUser) && timingSafeEqual(password, editorPassword));
+  return adminMatch || editorMatch;
 }
 
 /** True when the admin surface is usable at all. */
 export function adminConfigured(): boolean {
-  return getSecret() !== null && !!process.env.ADMIN_PASSWORD;
+  return getSecret() !== null && Boolean(
+    (process.env.ADMIN_USERNAME && process.env.ADMIN_PASSWORD) ||
+    (process.env.EDITOR_USERNAME && process.env.EDITOR_PASSWORD)
+  );
 }

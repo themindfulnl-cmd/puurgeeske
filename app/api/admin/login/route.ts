@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createSession, verifyPassword, adminConfigured } from '@/lib/auth';
+import { createSession, verifyCredentials, adminConfigured } from '@/lib/auth';
 
 /** Small in-memory throttle. Not a distributed limiter, but it turns an
  *  unlimited online guessing attack into a slow one per instance. */
@@ -39,14 +39,15 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json().catch(() => null);
+    const username = typeof body?.username === 'string' ? body.username.trim() : '';
     const password = typeof body?.password === 'string' ? body.password : '';
 
-    if (!password) {
-      return NextResponse.json({ error: 'Wachtwoord is verplicht' }, { status: 400 });
+    if (!username || !password) {
+      return NextResponse.json({ error: 'Gebruikersnaam en wachtwoord zijn verplicht' }, { status: 400 });
     }
 
-    if (!verifyPassword(password)) {
-      return NextResponse.json({ error: 'Onjuist wachtwoord' }, { status: 401 });
+    if (!verifyCredentials(username, password)) {
+      return NextResponse.json({ error: 'Onjuiste inloggegevens' }, { status: 401 });
     }
 
     const created = await createSession();

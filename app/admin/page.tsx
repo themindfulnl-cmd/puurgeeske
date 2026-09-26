@@ -1,156 +1,22 @@
-import { redirect } from "next/navigation";
-import { isAuthenticated } from "@/lib/auth";
-import { getServices, getEvents, getReviews, getBlogPosts } from "@/lib/content";
-import { LayoutGrid, Calendar, MessageSquare, FileText, TrendingUp, Users, Eye } from "lucide-react";
-import Link from "next/link";
+import Link from 'next/link';
+import { redirect } from 'next/navigation';
+import { Calendar, ArrowRight } from 'lucide-react';
+import { isAuthenticated } from '@/lib/auth';
+import { loadUpcomingEvents } from '@/lib/events-store';
+
+export const dynamic = 'force-dynamic';
 
 export default async function AdminDashboard() {
-  const authenticated = await isAuthenticated();
-  
-  if (!authenticated) {
-    redirect("/admin/login");
-  }
+  if (!await isAuthenticated()) redirect('/admin/login');
+  const events = await loadUpcomingEvents();
 
-  const services = getServices();
-  const events = getEvents();
-  const reviews = getReviews();
-  const posts = getBlogPosts();
-
-  const stats = [
-    {
-      label: "Actieve Services",
-      value: services.length,
-      icon: LayoutGrid,
-      href: "/admin/services",
-      color: "bg-blue-50 text-blue-600",
-    },
-    {
-      label: "Aankomende Events",
-      value: events.length,
-      icon: Calendar,
-      href: "/admin/events",
-      color: "bg-green-50 text-green-600",
-    },
-    {
-      label: "Reviews",
-      value: reviews.length,
-      icon: MessageSquare,
-      href: "/admin/reviews",
-      color: "bg-amber-50 text-amber-600",
-    },
-    {
-      label: "Blog Posts",
-      value: posts.length,
-      icon: FileText,
-      href: "/admin/blog",
-      color: "bg-purple-50 text-purple-600",
-    },
-  ];
-
-  return (
-    <div className="p-8">
-      {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-2xl font-semibold text-stone-800">Dashboard</h1>
-        <p className="text-stone-500">Welkom terug! Hier is een overzicht van je website.</p>
-      </div>
-
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-        {stats.map((stat) => (
-          <Link
-            key={stat.label}
-            href={stat.href}
-            className="bg-white rounded-2xl p-6 shadow-sm border border-stone-100 hover:shadow-lg transition-all group"
-          >
-            <div className="flex items-center justify-between mb-4">
-              <div className={`p-3 rounded-xl ${stat.color}`}>
-                <stat.icon className="h-6 w-6" />
-              </div>
-              <span className="text-3xl font-semibold text-stone-800 group-hover:text-[#D4A373] transition-colors">
-                {stat.value}
-              </span>
-            </div>
-            <p className="text-stone-500 text-sm">{stat.label}</p>
-          </Link>
-        ))}
-      </div>
-
-      {/* Quick Actions */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Recent Events */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-medium text-stone-800">Aankomende Events</h2>
-            <Link href="/admin/events" className="text-sm text-[#D4A373] hover:underline">
-              Bekijk alle
-            </Link>
-          </div>
-          <div className="space-y-4">
-            {events.slice(0, 3).map((event) => (
-              <div
-                key={event.id}
-                className="flex items-center justify-between p-4 bg-stone-50 rounded-xl"
-              >
-                <div>
-                  <p className="font-medium text-stone-800">{event.title}</p>
-                  <p className="text-sm text-stone-500">
-                    {new Date(event.date).toLocaleDateString("nl-NL", {
-                      day: "numeric",
-                      month: "short",
-                    })} - {event.time}
-                  </p>
-                </div>
-                <div className="text-right">
-                  <p className="text-sm font-medium text-green-600">
-                    {event.spotsRemaining} plekken
-                  </p>
-                  <p className="text-xs text-stone-400">beschikbaar</p>
-                </div>
-              </div>
-            ))}
-            {events.length === 0 && (
-              <p className="text-stone-400 text-center py-8">Geen aankomende events</p>
-            )}
-          </div>
-        </div>
-
-        {/* Recent Reviews */}
-        <div className="bg-white rounded-2xl p-6 shadow-sm border border-stone-100">
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-medium text-stone-800">Recente Reviews</h2>
-            <Link href="/admin/reviews" className="text-sm text-[#D4A373] hover:underline">
-              Bekijk alle
-            </Link>
-          </div>
-          <div className="space-y-4">
-            {reviews.slice(0, 3).map((review) => (
-              <div
-                key={review.id}
-                className="p-4 bg-stone-50 rounded-xl"
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div className="flex">
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <span
-                        key={star}
-                        className={star <= review.rating ? "text-amber-400" : "text-stone-300"}
-                      >
-                        ★
-                      </span>
-                    ))}
-                  </div>
-                  <span className="text-sm text-stone-500">{review.name}</span>
-                </div>
-                <p className="text-sm text-stone-600 line-clamp-2">{review.text}</p>
-              </div>
-            ))}
-            {reviews.length === 0 && (
-              <p className="text-stone-400 text-center py-8">Geen reviews</p>
-            )}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="max-w-5xl mx-auto p-6 md:p-10">
+    <p className="text-sm font-medium text-[#a33b70] uppercase tracking-widest">PuurGeeske beheer</p>
+    <h1 className="text-3xl font-serif text-[#31212b] mt-2">Welkom terug</h1>
+    <p className="text-stone-600 mt-2">Beheer de lessen en workshops die op je website verschijnen.</p>
+    <Link href="/admin/events" className="mt-8 flex items-center justify-between gap-5 rounded-3xl border border-[#ead8df] bg-white p-6 shadow-sm hover:shadow-md">
+      <span className="flex items-center gap-4"><span className="rounded-2xl bg-[#f8eaf0] p-4 text-[#793057]"><Calendar size={26} /></span><span><strong className="block text-xl font-serif text-[#31212b]">Lessen & workshops</strong><small className="text-stone-600">{events.length} aankomende momenten · toevoegen en bewerken</small></span></span><ArrowRight className="text-[#793057]" />
+    </Link>
+    <div className="mt-8 rounded-3xl bg-white p-6"><h2 className="text-xl font-serif text-[#31212b]">Aankomend</h2>{events.length ? <ul className="mt-4 divide-y divide-stone-100">{events.slice(0, 5).map((event) => <li key={event.id} className="flex flex-wrap justify-between gap-2 py-4"><span className="text-stone-800">{event.title}</span><span className="text-stone-500">{event.date} · {event.time}</span></li>)}</ul> : <p className="mt-4 text-stone-600">Er staat nog niets op de agenda. Voeg je eerste les toe.</p>}</div>
+  </div>;
 }

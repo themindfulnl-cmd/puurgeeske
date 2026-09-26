@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Lock, Eye, EyeOff } from "lucide-react";
 
 export default function AdminLogin() {
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
@@ -20,7 +21,7 @@ export default function AdminLogin() {
       const res = await fetch("/api/admin/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
+        body: JSON.stringify({ username, password }),
       });
 
       const data = await res.json();
@@ -39,17 +40,17 @@ export default function AdminLogin() {
   }
 
   return (
-    <div className="min-h-screen bg-[#FDFBF7] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-[#241923] flex items-center justify-center p-4">
       <div className="w-full max-w-md">
         {/* Logo */}
         <div className="text-center mb-8">
           <img
-            src="/images/logo-full.png"
+            src="/brand/puurgeeske-sunset.png"
             alt="PuurGeeske"
             className="h-24 mx-auto mb-4"
           />
-          <h1 className="text-2xl font-light text-stone-800">Admin Dashboard</h1>
-          <p className="text-stone-500 text-sm mt-2">Log in om je website te beheren</p>
+          <h1 className="text-2xl font-light text-white">PuurGeeske beheer</h1>
+          <p className="text-[#e2c7d1] text-sm mt-2">Log in om je lessen en workshops te beheren</p>
         </div>
 
         {/* Login Form */}
@@ -58,6 +59,18 @@ export default function AdminLogin() {
           className="bg-white rounded-[2rem] p-8 shadow-lg border border-stone-100"
         >
           <div className="space-y-6">
+            <div className="space-y-2">
+              <label htmlFor="username" className="text-sm font-medium text-stone-700">Gebruikersnaam</label>
+              <input
+                id="username"
+                type="text"
+                autoComplete="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl border border-stone-200 bg-[#FDFBF7] focus:outline-none focus:ring-2 focus:ring-[#b43b79]/50"
+                required
+              />
+            </div>
             <div className="space-y-2">
               <label htmlFor="password" className="text-sm font-medium text-stone-700">
                 Wachtwoord
@@ -69,6 +82,7 @@ export default function AdminLogin() {
                 <input
                   id="password"
                   type={showPassword ? "text" : "password"}
+                  autoComplete="current-password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-12 pr-12 py-3 rounded-xl border border-stone-200 bg-[#FDFBF7] focus:outline-none focus:ring-2 focus:ring-[#D4A373]/50 focus:border-[#D4A373] transition-all"
