@@ -1,41 +1,15 @@
 [
   {
-    "id": "hot-yin-winter",
-    "date": "2025-02-06",
-    "time": "14:00 - 16:00",
-    "title": "Hot Yin Yoga: Winter Editie",
-    "description": "Laat de kou uit je lichaam verdwijnen en geef jezelf een diepe, verwarmende reset. De focus ligt op vertragen, loslaten en opladen.",
+    "id": "face-yin-september-2026",
+    "date": "2026-09-20",
+    "time": "13:00 – 15:00",
+    "title": "Face Yin Yoga · Nervous System Reset",
+    "description": "Een nazomermiddag met gezichtsmassage en zachte yin-houdingen.",
     "price": 40,
-    "location": "Yurt, Scheveningen",
-    "spotsTotal": 12,
-    "spotsRemaining": 5,
-    "bookingUrl": "https://momoyoga.com/puurgeeske",
-    "active": true
-  },
-  {
-    "id": "sound-bath",
-    "date": "2025-03-12",
-    "time": "10:00 - 12:00",
-    "title": "Sound Bath & Meditatie",
-    "description": "Ervaar diepe ontspanning en innerlijke rust met een helend klankbad. Laat de vibraties van klankschalen en gongs je meenemen.",
-    "price": 35,
-    "location": "Studio Den Haag",
-    "spotsTotal": 15,
-    "spotsRemaining": 8,
-    "bookingUrl": "https://momoyoga.com/puurgeeske",
-    "active": true
-  },
-  {
-    "id": "breathwork-stress",
-    "date": "2025-04-20",
-    "time": "09:30 - 11:30",
-    "title": "Ademwerk voor Stressreductie",
-    "description": "Leer krachtige ademhalingstechnieken om stress te verminderen, energie te verhogen en je zenuwstelsel te kalmeren.",
-    "price": 45,
-    "location": "Strand Scheveningen",
-    "spotsTotal": 10,
-    "spotsRemaining": 10,
-    "bookingUrl": "https://momoyoga.com/puurgeeske",
+    "location": "Faraja, Hoofddorp",
+    "spotsTotal": 0,
+    "spotsRemaining": 0,
+    "bookingUrl": "https://www.faraja.nl/workshops",
     "active": true
   }
 ]

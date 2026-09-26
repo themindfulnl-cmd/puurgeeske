@@ -1,93 +1,12 @@
-import { Button } from "@/components/ui/Button";
+import { ArrowUpRight, Clock, MapPin } from "lucide-react";
+import { Picture } from "@/components/ui/Picture";
 import type { Event } from "@/lib/content";
-
-const nlDate = new Intl.DateTimeFormat("nl-NL", { day: "numeric", month: "short" });
-
-function formatDate(iso: string): string {
-  const d = new Date(`${iso}T00:00:00`);
-  return Number.isNaN(d.getTime()) ? iso : nlDate.format(d);
-}
-
-function formatPrice(price: number): string {
-  return `€${price}`;
-}
-
-export function Workshops({ events }: { events: Event[] }) {
-  return (
-    <section className="py-24 bg-white" id="workshops">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">
-          <h2 className="text-xs md:text-sm font-medium tracking-[0.3em] text-stone-500 uppercase">
-            Agenda
-          </h2>
-          <h3 className="text-3xl md:text-5xl font-light text-stone-800">
-            Workshops &amp;{" "}
-            <span className="font-serif italic text-stone-600">Events</span>
-          </h3>
-        </div>
-
-        {events.length === 0 ? (
-          <div className="max-w-xl mx-auto text-center bg-[#FDFBF7] border border-stone-100 rounded-[2rem] p-12">
-            <p className="text-stone-600 font-light leading-relaxed text-lg">
-              Er staat op dit moment geen workshop gepland. Wil je weten wanneer de
-              volgende er is? Stuur me gerust een bericht — dan laat ik het je weten.
-            </p>
-            <div className="mt-8">
-              <Button size="lg" className="rounded-full px-8" asChild>
-                <a href="/contact">Neem contact op</a>
-              </Button>
-            </div>
-          </div>
-        ) : (
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {events.map((event, index) => (
-              <div key={event.id}>
-                <div className="group relative h-full bg-white rounded-[2rem] p-8 border border-stone-100 shadow-sm hover-lift">
-                  <div className="absolute top-8 right-8 text-right">
-                    <span className="block text-2xl font-serif italic text-[#D4A373]">
-                      {formatDate(event.date)}
-                    </span>
-                    <span className="text-xs text-stone-400 uppercase tracking-widest">
-                      {event.time}
-                    </span>
-                  </div>
-
-                  <div className="mt-16 space-y-4">
-                    <h4 className="text-xl font-medium text-stone-800 group-hover:text-[#D4A373] transition-colors">
-                      {event.title}
-                    </h4>
-                    <p className="text-sm text-stone-500 font-light leading-relaxed">
-                      {event.description}
-                    </p>
-                    <p className="text-xs text-stone-400 uppercase tracking-widest">
-                      {event.location}
-                    </p>
-                    <div className="pt-4 flex items-center justify-between">
-                      <span className="text-sm font-medium text-stone-400">
-                        {formatPrice(event.price)}
-                      </span>
-                      <Button
-                        variant="outline"
-                        size="sm"
-                        className="rounded-full border-stone-200 text-stone-600 hover:bg-stone-50"
-                        asChild
-                      >
-                        <a
-                          href={event.bookingUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Inschrijven
-                        </a>
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
+export function Workshops({events}:{events:Event[]}) {
+ return <section id="workshops" className="py-24 bg-secondary"><div className="container mx-auto px-6 md:px-12">
+   <div className="section-heading"><div><p className="eyebrow">In de agenda</p><h2>Maak ruimte voor <em>jezelf.</em></h2></div></div>
+   {events.length ? events.map(event=><article className="event-feature" key={event.id}>
+    <div className="event-photo"><Picture name="group-beach" widths={[480,768,1024]} sizes="(max-width: 767px) 90vw, 45vw" alt="Samen buiten yoga beleven" width={1024} height={678} imgClassName="w-full h-full object-cover" className="h-full"/><span>Samen vertragen</span></div>
+    <div className="event-details"><p className="eyebrow">{new Intl.DateTimeFormat('nl-NL',{day:'numeric',month:'long',year:'numeric'}).format(new Date(event.date+'T12:00:00'))}</p><h3>{event.title}</h3><p>{event.description}</p><div className="event-facts"><span><Clock size={16}/>{event.time}</span><span><MapPin size={16}/>{event.location}</span></div><div className="flex items-center justify-between gap-4 mt-8"><strong className="text-3xl font-serif">€{event.price}<small className="font-sans text-xs text-muted-foreground ml-2">per persoon</small></strong><a className="action-link" href={event.bookingUrl} target="_blank" rel="noopener noreferrer">Bekijk & boek <ArrowUpRight size={16}/></a></div></div>
+   </article>):<p className="text-muted-foreground">Een nieuw moment volgt binnenkort. <a href="/contact" className="text-primary underline">Vraag naar de mogelijkheden.</a></p>}
+ </div></section>;
 }

@@ -9,7 +9,7 @@
     "category": "Yoga",
     "author": "Geeske",
     "date": "2025-01-15",
-    "active": true
+    "active": false
   },
   {
     "id": "ademhaling-stress",
@@ -21,7 +21,7 @@
     "category": "Breathwork",
     "author": "Geeske",
     "date": "2025-01-08",
-    "active": true
+    "active": false
   },
   {
     "id": "morning-routine",
@@ -33,6 +33,6 @@
     "category": "Lifestyle",
     "author": "Geeske",
     "date": "2024-12-20",
-    "active": true
+    "active": false
   }
 ]

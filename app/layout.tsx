@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#FDFBF7",
+  themeColor: "#1d181c",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -78,7 +78,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="nl">
+    <html lang="nl" suppressHydrationWarning>
       <head>
         {/* Runs before first paint, so revealed sections never flash in and
             back out. Without it they simply stay visible. */}

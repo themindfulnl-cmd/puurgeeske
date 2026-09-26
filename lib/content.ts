@@ -46,6 +46,8 @@ function writeJsonFile<T>(filename: string, data: T): void {
 
 // Types
 export interface Service {
+  duration?: string;
+  price?: string;
   id: string;
   title: string;
   description: string;

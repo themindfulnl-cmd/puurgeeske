@@ -1,22 +1,5 @@
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { About } from "@/components/sections/About";
-
-export default function OverPage() {
-    return (
-        <div className="min-h-screen flex flex-col font-sans bg-[#FDFBF7]">
-            <Navbar />
-            <main className="flex-grow pt-24">
-                <About />
-                <section className="container mx-auto px-4 pb-24 text-center max-w-2xl">
-                    <h3 className="text-2xl font-bold mb-4">Mijn Reis</h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                        [Hier komt meer gedetailleerde tekst over je achtergrond, opleidingen en passie voor yoga.
-                        Dit is een placeholder sectie die je later kunt vullen met je volledige biografie.]
-                    </p>
-                </section>
-            </main>
-            <Footer />
-        </div>
-    );
-}
+import Link from "next/link";
+export default function OverPage(){return <div className="min-h-screen bg-background"><Navbar/><main className="pt-28"><div className="container mx-auto px-6 py-10"><p className="eyebrow">Het gezicht achter PuurGeeske</p><h1 className="text-5xl md:text-7xl mt-5">Aangenaam, <em className="text-primary">Geeske.</em></h1></div><About/><section className="py-20 text-center px-6"><h2 className="text-4xl mb-6">Zullen we kennismaken?</h2><Link href="/contact" className="action-link">Plan een persoonlijk moment ↗</Link></section></main><Footer/></div>}

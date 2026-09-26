@@ -5,6 +5,7 @@ import type { NextConfig } from "next";
 const IMMUTABLE = "public, max-age=31536000, immutable";
 
 const nextConfig: NextConfig = {
+  turbopack: { root: process.cwd() },
   reactStrictMode: true,
   poweredByHeader: false,
   compress: true,

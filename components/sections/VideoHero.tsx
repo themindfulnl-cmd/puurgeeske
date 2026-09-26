@@ -1,62 +1,40 @@
-import { Picture } from "@/components/ui/Picture";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { FilmPlayer } from "@/components/ui/FilmPlayer";
 import { Button } from "@/components/ui/Button";
+import { getSiteConfig } from "@/lib/content";
 
-const POSTER_WIDTHS = [480, 768, 1024, 1440, 1920];
-
-/** The hero: Geeske's introduction film.
- *  Poster-first — it has speech, so nothing plays until the visitor asks.
- *  The <video> element is not created at all until then. */
 export function VideoHero() {
+  const config = getSiteConfig();
   return (
-    <section className="relative bg-[#FDFBF7] overflow-hidden pt-28 pb-16 md:pt-36 md:pb-24">
-
-
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
-          {/* LEFT — the brand line */}
-          <div className="w-full lg:w-[38%] text-center lg:text-left anim-in">
-            <Picture
-              name="logo"
-              widths={[224, 320, 448]}
-              sizes="(max-width: 768px) 224px, 256px"
-              alt="Puur Geeske"
-              width={448}
-              height={448}
-              priority
-              avif={false}
-              fallback="png"
-              fallbackWidth={224}
-              className="w-56 md:w-64 mx-auto lg:mx-0 mb-6"
-              imgClassName="w-full h-auto object-contain"
-            />
-            <p className="text-lg md:text-xl text-stone-600 font-light leading-relaxed font-serif italic">
-              &ldquo;Verbind met je ware zelf in alle rust en ruimte.&rdquo;
-            </p>
-            <p className="mt-5 text-stone-500 text-base leading-relaxed max-w-md mx-auto lg:mx-0">
-              Maak kennis met Geeske — yoga, pilates en coaching in Hoofddorp.
-            </p>
-            <div className="mt-8 flex justify-center lg:justify-start">
-              <Button size="lg" className="rounded-full px-8">
-                Boek een les
-              </Button>
+    <section className="sunset-hero">
+      <div className="container mx-auto px-6 md:px-12">
+        <div className="hero-grid">
+          <div className="anim-in">
+            <p className="eyebrow">PuurGeeske · Hoofddorp</p>
+            <h1 className="hero-title">Even vertragen.<br />Helemaal <em>jezelf.</em></h1>
+            <p className="hero-description">Vind rust in je hoofd, ruimte in je lichaam en verbinding met jezelf. Met persoonlijke aandacht en de zachte kracht van beweging.</p>
+            <div className="hero-actions">
+              <Button asChild size="lg"><a href={config.bookingUrl} target="_blank" rel="noopener noreferrer">Plan jouw moment <ArrowUpRight className="ml-3 h-4 w-4" /></a></Button>
+              <Link href="#services" className="text-link">Ontdek het aanbod <ArrowDown size={14} /></Link>
             </div>
+            <p className="hero-footnote"><i aria-hidden="true" /> Alle ruimte voor jou. Precies zoals je bent.</p>
           </div>
-
-          {/* RIGHT — the film */}
-          <div className="w-full lg:w-[62%] anim-in anim-d1">
-            <FilmPlayer
-              base="intro"
-              posterName="intro-poster"
-              posterWidths={POSTER_WIDTHS}
-              posterSizes="(max-width: 640px) 62vw, (max-width: 1024px) 85vw, 62vw"
-              alt="Geeske stelt zich voor"
-              buttonLabel="Speel de introductievideo af"
-              priority
-            />
-            <p className="mt-4 text-sm text-stone-500 text-center lg:text-left">
-              Introductie · 1 min 30
-            </p>
+          <div className="logo-scene anim-in anim-d1">
+            <Image src="/brand/puurgeeske-sunset.png" alt="PuurGeeske — boom en woordmerk in een warme zonsondergang" width={500} height={500} priority sizes="(max-width: 767px) 90vw, 45vw" />
+          </div>
+        </div>
+        <div className="intro-panel anim-in anim-d2">
+          <div>
+            <span className="eyebrow">Een eerste kennismaking</span>
+            <h2>Welkom, ik ben Geeske.</h2>
+            <p>Een plek waar je even niets hoeft. Voel de sfeer en ontdek hoe ik je begeleid naar meer balans in lichaam en geest.</p>
+            <Link href="/over" className="text-link mt-5">Meer over mij <ArrowUpRight size={14} /></Link>
+          </div>
+          <div>
+            <FilmPlayer base="intro" posterName="intro-poster" posterWidths={[480, 768, 1024, 1440, 1920]} posterSizes="(max-width: 767px) 90vw, 360px" alt="Geeske stelt zich voor" buttonLabel="Speel de introductievideo af" />
+            <p className="mt-3 text-xs tracking-wider">ONTMOET GEESKE · 1 MIN 30</p>
           </div>
         </div>
       </div>

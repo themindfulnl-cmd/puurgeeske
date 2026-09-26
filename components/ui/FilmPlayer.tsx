@@ -68,7 +68,7 @@ export function FilmPlayer({
   }, [base]);
 
   return (
-    <div className="relative rounded-[2rem] overflow-hidden shadow-sm border-4 border-white bg-black aspect-video">
+    <div className="relative rounded-[2rem] overflow-hidden shadow-sm border-4 border-border bg-black aspect-video">
       {src ? (
         <video
           ref={videoRef}
@@ -99,9 +99,9 @@ export function FilmPlayer({
             aria-label={buttonLabel}
             className="absolute inset-0 flex items-center justify-center bg-stone-900/15 hover:bg-stone-900/25 transition-colors group"
           >
-            <span className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-white shadow-sm hover-pop">
+            <span className="flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full bg-accent shadow-sm hover-pop">
               <Play
-                className="w-8 h-8 md:w-10 md:h-10 text-[#D4A373] ml-1"
+                className="w-8 h-8 md:w-10 md:h-10 text-primary ml-1"
                 fill="currentColor"
               />
             </span>

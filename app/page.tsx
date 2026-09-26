@@ -5,7 +5,7 @@ import { About } from "@/components/sections/About";
 import { Services } from "@/components/sections/Services";
 import { SeasonVideo } from "@/components/sections/SeasonVideo";
 import { Workshops } from "@/components/sections/Workshops";
-import { Reviews } from "@/components/sections/Reviews";
+import { FAQ } from "@/components/sections/FAQ";
 import { getReviews, getEvents, getSiteConfig } from "@/lib/content";
 
 /** Rendered once and served from the edge. The hourly window is only so that
@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col font-sans bg-[#FDFBF7]">
+    <div className="min-h-screen flex flex-col font-sans bg-background">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -49,11 +49,11 @@ export default function Home() {
       <Navbar />
       <main className="flex-grow">
         <VideoHero />
-        <About />
-        <SeasonVideo />
         <Services />
         <Workshops events={events} />
-        <Reviews reviews={reviews} />
+        <About />
+        <SeasonVideo />
+        <FAQ />
       </main>
       <Footer />
     </div>

@@ -1,42 +1,62 @@
 [
   {
     "id": "yoga",
-    "title": "Yoga",
-    "description": "Verbind ademhaling en beweging voor flexibiliteit en rust.",
-    "image": "/images/services/yoga.jpg",
+    "title": "Yoga & Pilates",
+    "description": "Beweging, ademhaling en meditatie. Ook buiten bij de Toolenburgerplas.",
     "icon": "Flower2",
+    "duration": "Vraag naar de actuele lessen",
+    "price": "",
+    "image": "",
     "active": true
   },
   {
-    "id": "pilates",
-    "title": "Pilates",
-    "description": "Versterk je kern en verbeter je houding en balans.",
-    "image": "/images/services/pilates.jpg",
-    "icon": "Activity",
+    "id": "yin",
+    "title": "Yin Yoga",
+    "description": "Langzaam bewegen, langer in een houding blijven en de tijd nemen om te verzachten.",
+    "icon": "Flower2",
+    "duration": "Lessen & workshops",
+    "price": "",
+    "image": "",
     "active": true
   },
   {
     "id": "coaching",
-    "title": "Personal Coaching",
-    "description": "Een-op-een begeleiding om je persoonlijke doelen te bereiken.",
-    "image": "/images/services/coaching.jpg",
+    "title": "Wandelcoaching",
+    "description": "Persoonlijke begeleiding in de natuur, afgestemd op jouw behoeften.",
     "icon": "User",
-    "active": true
-  },
-  {
-    "id": "massage",
-    "title": "PuurGeeske Massage",
-    "description": "Diepe ontspanning en herstel voor lichaam en geest.",
-    "image": "/images/services/massage.jpg",
-    "icon": "Heart",
+    "duration": "90 minuten",
+    "price": "€70",
+    "image": "",
     "active": true
   },
   {
     "id": "breathwork",
     "title": "Breathwork",
-    "description": "Leer de kracht van je ademhaling voor energie en focus.",
-    "image": "/images/services/breathwork.jpg",
+    "description": "Een persoonlijke sessie met verbonden ademhaling.",
     "icon": "Wind",
+    "duration": "90 minuten",
+    "price": "€70",
+    "image": "",
+    "active": true
+  },
+  {
+    "id": "massage",
+    "title": "Soul Sense Massage",
+    "description": "Kies uit ontspanningsmassage, shiatsu, nekwerk of voetreflexologie. Ook aan huis.",
+    "icon": "Heart",
+    "duration": "30 / 60 / 90 minuten",
+    "price": "€35 / €70 / €100",
+    "image": "",
+    "active": true
+  },
+  {
+    "id": "groepen",
+    "title": "Samen beleven",
+    "description": "Privélessen en yoga- of ademworkshops voor bedrijven, verjaardagen en vrienden.",
+    "icon": "Activity",
+    "duration": "Op aanvraag",
+    "price": "",
+    "image": "",
     "active": true
   }
 ]
