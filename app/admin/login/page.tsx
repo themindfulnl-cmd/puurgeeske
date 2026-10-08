@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { Lock, Eye, EyeOff } from "lucide-react";
 
 export default function AdminLogin() {
@@ -10,7 +9,6 @@ export default function AdminLogin() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -27,8 +25,9 @@ export default function AdminLogin() {
       const data = await res.json();
 
       if (res.ok) {
-        router.push("/admin");
-        router.refresh();
+        // A full navigation makes the new session cookie available to the
+        // server-rendered admin page immediately.
+        window.location.assign("/admin");
       } else {
         setError(data.error || "Onjuist wachtwoord");
       }
