@@ -35,7 +35,7 @@ export function Reviews({ reviews }: { reviews: Review[] }) {
           <h2 className="text-xs md:text-sm font-medium tracking-[0.3em] text-muted-foreground uppercase">
             Ervaringen
           </h2>
-          <h3 className="text-3xl md:text-5xl font-light text-foreground">
+          <h3 className="text-2xl md:text-4xl font-light text-foreground leading-snug">
             Wat anderen{" "}
             <span className="font-serif italic text-muted-foreground">zeggen</span>
           </h3>

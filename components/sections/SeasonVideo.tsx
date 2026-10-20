@@ -11,7 +11,7 @@ export function SeasonVideo() {
           <span className="text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-primary">
             Seizoensles 01
           </span>
-          <h2 className="mt-4 text-3xl md:text-5xl font-semibold text-foreground">
+          <h2 className="mt-4 text-2xl md:text-4xl font-normal text-foreground leading-snug">
             De Nazomer
           </h2>
           <p className="mt-5 text-muted-foreground text-base md:text-lg leading-relaxed max-w-2xl mx-auto">

@@ -20,7 +20,7 @@ function renderContent(content: string) {
     // H1
     if (line.startsWith("# ")) {
       return (
-        <h1 key={index} className="text-3xl md:text-4xl font-light text-foreground mb-6 mt-8">
+        <h1 key={index} className="text-2xl md:text-3xl font-light text-foreground mb-6 mt-8 leading-snug">
           {line.slice(2)}
         </h1>
       );
@@ -108,7 +108,7 @@ export default async function BlogPostPage({
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl font-light text-foreground mb-6">
+            <h1 className="text-3xl md:text-4xl font-light text-foreground mb-6 leading-snug">
               {post.title}
             </h1>
 

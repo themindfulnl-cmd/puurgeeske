@@ -119,7 +119,7 @@ export function Navbar() {
                             href={link.href}
                                 aria-current={pathname === link.href ? "page" : undefined}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-4xl font-light text-foreground hover:text-primary hover:italic transition-all duration-300 font-serif"
+                            className="text-3xl font-light text-foreground hover:text-primary hover:italic transition-all duration-300 font-serif"
                         >
                             {link.name}
                         </Link>
