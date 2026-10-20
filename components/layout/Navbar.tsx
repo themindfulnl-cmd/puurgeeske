@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import config from "@/lib/data/config.json";
 import { useEffect, useState } from "react";
@@ -70,7 +71,9 @@ export function Navbar() {
                 )}
             >
                 <div className="container mx-auto px-4 md:px-6 flex items-center justify-between">
-                    <Link href="/" aria-label="PuurGeeske home" className="brand-wordmark">puur<span>Geeske</span><span className="text-primary ml-2 text-sm">✳</span></Link>
+                    <Link href="/" aria-label="PuurGeeske home">
+                        <Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske" width={106} height={106} className="brand-logo" priority />
+                    </Link>
 
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
@@ -78,7 +81,7 @@ export function Navbar() {
                                 key={link.name}
                                 href={link.href}
                                 aria-current={pathname === link.href ? "page" : undefined}
-                                className="text-sm font-medium text-foreground/80 hover:text-primary aria-[current=page]:text-primary transition-colors"
+                                className="text-sm font-medium text-foreground hover:text-primary aria-[current=page]:text-primary transition-colors"
                             >
                                 {link.name}
                             </Link>
@@ -121,7 +124,7 @@ export function Navbar() {
                             {link.name}
                         </Link>
                     ))}
-                    <div className="w-16 h-[1px] bg-stone-200 my-4" />
+                    <div className="w-16 h-[1px] bg-border my-4" />
                     <Button
                         asChild
                         className="w-full max-w-sm h-14 rounded-full text-lg bg-primary text-primary-foreground hover:bg-primary/90"

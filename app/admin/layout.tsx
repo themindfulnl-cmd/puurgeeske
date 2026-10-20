@@ -5,7 +5,7 @@ import { Calendar, Home, LogOut } from 'lucide-react';
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return <div className="min-h-screen bg-[#f8f2f4] md:flex">
     <aside className="border-b border-[#ead8df] bg-white p-5 md:w-64 md:min-h-screen md:border-b-0 md:border-r flex flex-col">
-      <Link href="/admin" className="flex items-center gap-3"><Image src="/brand/puurgeeske-sunset.png" alt="PuurGeeske" width={56} height={56} className="rounded-xl" /><span className="font-serif text-xl text-[#793057]">PuurGeeske</span></Link>
+      <Link href="/admin" className="flex items-center gap-3"><Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske" width={56} height={56} className="rounded-xl" /><span className="font-serif text-xl text-[#793057]">PuurGeeske</span></Link>
       <p className="text-xs text-stone-500 mt-2">Websitebeheer</p>
       <nav className="mt-8 grid gap-2">
         <Link href="/admin" className="flex items-center gap-3 rounded-xl px-4 py-3 text-stone-700 hover:bg-[#f8f2f4]"><Home size={19} /> Overzicht</Link>

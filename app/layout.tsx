@@ -47,10 +47,10 @@ export const metadata: Metadata = {
       "Verbind met je ware zelf in alle rust en ruimte. Maak kennis met Geeske.",
     images: [
       {
-        url: "/opt/intro-poster-1024.webp",
-        width: 1024,
-        height: 576,
-        alt: "Geeske van PuurGeeske",
+        url: "/brand/puurgeeske-logo.png",
+        width: 1254,
+        height: 1254,
+        alt: "Puur Geeske logo",
       },
     ],
   },
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PuurGeeske — Yoga, pilates en coaching in Hoofddorp",
     description: "Verbind met je ware zelf in alle rust en ruimte.",
-    images: ["/opt/intro-poster-1024.webp"],
+    images: ["/brand/puurgeeske-logo.png"],
   },
   robots: {
     index: true,
@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#1d181c",
+  themeColor: "#a587b1",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",

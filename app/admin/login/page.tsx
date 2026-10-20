@@ -44,7 +44,7 @@ export default function AdminLogin() {
         {/* Logo */}
         <div className="text-center mb-8">
           <img
-            src="/brand/puurgeeske-sunset.png"
+            src="/brand/puurgeeske-logo.png"
             alt="PuurGeeske"
             className="h-24 mx-auto mb-4"
           />

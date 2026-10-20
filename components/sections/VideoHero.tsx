@@ -22,7 +22,7 @@ export function VideoHero() {
             <p className="hero-footnote"><i aria-hidden="true" /> Alle ruimte voor jou. Precies zoals je bent.</p>
           </div>
           <div className="logo-scene anim-in anim-d1">
-            <Image src="/brand/puurgeeske-sunset.png" alt="PuurGeeske — boom en woordmerk in een warme zonsondergang" width={500} height={500} priority sizes="(max-width: 767px) 90vw, 45vw" />
+            <Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske — lotus en woordmerk op paarse achtergrond" width={1254} height={1254} priority sizes="(max-width: 767px) 90vw, 45vw" />
           </div>
         </div>
         <div className="intro-panel anim-in anim-d2">
