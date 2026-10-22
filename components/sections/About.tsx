@@ -6,8 +6,7 @@ export function About() {
   return <section id="geeske" className="about-section">
     <div className="site-shell about-layout">
       <div className="about-collage">
-        <div className="portrait-image"><Image src="/images/geeske-yoga-beach.jpg" alt="Geeske doet yoga op het strand" fill sizes="(max-width: 700px) 75vw, 390px" /></div>
-        <div className="portrait-detail"><Image src="/images/coastal-ritual.webp" alt="Zachte materialen en een meditatiekussen in het zonlicht" fill sizes="(max-width: 700px) 35vw, 210px"/></div>
+        <div className="portrait-image"><Image src="/images/geeske-yoga-portrait.jpg" alt="Geeske beoefent yoga op een houten vlonder aan het water" fill sizes="(max-width: 600px) 75vw, (max-width: 800px) 40vw, 440px" /></div>
         <div className="portrait-stamp"><Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske" width={108} height={108} sizes="(max-width: 800px) 90px, 108px" /></div>
         <p className="portrait-caption">Buiten zijn. Diep ademhalen. Gewoon jezelf.</p>
       </div>

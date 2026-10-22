@@ -41,6 +41,7 @@
 }
 
 .featuredCard .cardBody { padding: 24px; }
+.imageLabelTop { top: 17px; right: 17px; bottom: auto; left: auto; }
 .cardHeading { display: flex; justify-content: space-between; align-items: center; gap: 13px; }
 .cardHeading h3 { font-size: var(--heading-card); line-height: 1.25; letter-spacing: -.025em; font-weight: 400; }
 .arrow {

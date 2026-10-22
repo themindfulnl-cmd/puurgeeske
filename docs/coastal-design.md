@@ -39,3 +39,9 @@ The hero uses muted inline looping playback, with a 44px pause/play control. Red
 Following review, reduced the homepage headline from 84px to 40px on desktop and 34px on mobile. Main section titles are now 30–34px, with service titles at 22–24px and secondary-page titles at 32–36px. Softer spacing and natural line wrapping keep the hierarchy calm. The supplied lotus logo now appears prominently above the centered hero title and beside Geeske’s portrait midway through the page.
 
 Production build, TypeScript and diff checks pass. Browser inspection confirmed the new heading sizes, loaded logos, and no horizontal overflow at 1280px and 390px. About-page mobile headings also fit without overflow.
+
+## Teacher photographs — 22 October 2026
+
+Integrated two photographs supplied by the user: Photo 2 is `public/images/geeske-yoga-portrait.jpg`, used in the homepage introduction and About page; Photo 3 is `public/images/geeske-yoga-water.jpg`, used for Yoga & Pilates. Original files are preserved without retouching; Next Image handles responsive delivery. The crops retain the yoga pose, and the class label sits above the subject. Removed the decorative still-life overlay from the homepage portrait so the teacher stays unobstructed. The hero banner, footage, logo, and title styling are unchanged.
+
+Production build and TypeScript pass. Browser review confirmed the photos load, the pose remains visible, and the homepage fits at desktop and 390px mobile widths.

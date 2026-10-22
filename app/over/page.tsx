@@ -21,11 +21,11 @@ export default function OverPage() {
         <section className={`site-shell ${styles.aboutIntro}`} aria-labelledby="about-title">
           <div className={styles.portraitWrap}>
             <Image
-              src="/images/geeske-yoga-beach.jpg"
+              src="/images/geeske-yoga-portrait.jpg"
               sizes="(max-width: 760px) calc(100vw - 44px), 400px"
-              alt="Geeske beoefent yoga op het strand"
-              width={475}
-              height={1024}
+              alt="Geeske beoefent yoga op een houten vlonder aan het water"
+              width={576}
+              height={1280}
               loading="eager"
               fetchPriority="high"
               className={styles.portrait}

@@ -5,7 +5,7 @@ import { getServices, type Service } from "@/lib/content";
 import styles from "./services.module.css";
 
 const presentation: Record<string, { image: string; label: string; position?: string }> = {
-  yoga: { image: "/images/geeske-group-beach.jpg", label: "Samen bewegen", position: "50% 45%" },
+  yoga: { image: "/images/geeske-yoga-water.jpg", label: "In de buitenlucht", position: "50% 54%" },
   yin: { image: "/images/yoga-still-life.webp", label: "Vertragen & voelen" },
   breathwork: { image: "/images/coastal-ritual.webp", label: "Ruimte in je adem" },
   coaching: { image: "/images/coastal-dunes.webp", label: "Buiten, met aandacht" },
@@ -28,7 +28,7 @@ function ServiceCard({ service, compact = false }: { service: Service; compact?:
             sizes={compact ? "(max-width: 700px) 112px, 96px" : "(max-width: 700px) 90vw, 31vw"}
             style={visual.position ? { objectPosition: visual.position } : undefined}
           />
-          {!compact && <span className={styles.imageLabel}>{visual.label}</span>}
+          {!compact && <span className={`${styles.imageLabel} ${service.id === "yoga" ? styles.imageLabelTop : ""}`}>{visual.label}</span>}
         </div>
         <div className={styles.cardBody}>
           {compact && <span className={styles.smallLabel}>{visual.label}</span>}
