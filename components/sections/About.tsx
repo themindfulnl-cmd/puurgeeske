@@ -5,17 +5,19 @@ import { ArrowUpRight } from "lucide-react";
 export function About() {
   return <section id="geeske" className="about-section">
     <div className="site-shell about-layout">
-      <div className="about-portrait">
-        <div className="portrait-image"><Image src="/images/geeske-yoga-beach.jpg" alt="Geeske doet yoga op het strand" width={475} height={1024} sizes="(max-width: 700px) 80vw, 380px" /></div>
-        <p className="portrait-caption">Met beide voeten op de grond.<span>Geeske</span></p>
+      <div className="about-collage">
+        <div className="portrait-image"><Image src="/images/geeske-yoga-beach.jpg" alt="Geeske doet yoga op het strand" fill sizes="(max-width: 700px) 75vw, 390px" /></div>
+        <div className="portrait-detail"><Image src="/images/coastal-ritual.webp" alt="Zachte materialen en een meditatiekussen in het zonlicht" fill sizes="(max-width: 700px) 35vw, 210px"/></div>
+        <div className="portrait-stamp"><span>Met aandacht</span><span className="stamp-flower" aria-hidden="true">✳</span><span>voor jou</span></div>
+        <p className="portrait-caption">Buiten zijn. Diep ademhalen. Gewoon jezelf.</p>
       </div>
       <div className="about-copy">
         <p className="eyebrow">Aangenaam, ik ben Geeske</p>
-        <h2 className="section-title">Aandacht begint<br/>bij <em>luisteren.</em></h2>
+        <h2 className="section-title">Je hoeft niets<br/>te worden.<br/><em>Je mag er zijn.</em></h2>
         <p className="intro-copy">Er is geen vaste manier om tot rust te komen. Wel een manier die bij jou past.</p>
-        <p>In mijn werk komen yoga, pilates, ademwerk en lichaamswerk samen. Soms begint het met bewegen, soms met vertragen. Ik luister naar wat je nodig hebt en begeleid je in jouw tempo.</p>
-        <Link href="/over" className="text-link">Maak kennis met mij <ArrowUpRight size={16}/></Link>
-        <div className="approach-note"><span>01 — Mijn uitgangspunt</span><p>Je hoeft niets te bewijzen.<br/>We beginnen waar je bent.</p></div>
+        <p>Met yoga, pilates, ademwerk en lichaamswerk help ik je ruimte te maken voor jezelf. Soms door te bewegen, soms door juist even stil te staan. Altijd met persoonlijke aandacht.</p>
+        <Link href="/over" className="text-link">Meer over Geeske <ArrowUpRight size={17}/></Link>
+        <div className="personal-signature">Liefs, Geeske</div>
       </div>
     </div>
   </section>;

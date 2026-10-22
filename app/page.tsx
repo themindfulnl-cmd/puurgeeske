@@ -50,8 +50,8 @@ export default async function Home() {
       <Navbar />
       <main id="main-content" className="flex-grow">
         <VideoHero />
-        <About />
         <Services />
+        <About />
         <Workshops events={events} />
         <SeasonVideo />
         <FAQ />

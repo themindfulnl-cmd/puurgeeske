@@ -1,10 +1,10 @@
 .page {
-  color: #3d3044;
-  background: #f6f3ed;
+  color: #493c50;
+  background: #faf7f2;
 }
 
 .main {
-  padding-top: 88px;
+  padding-top: 94px;
 }
 
 .title,
@@ -32,7 +32,7 @@
   grid-template-columns: 0.9fr 1fr;
   gap: clamp(50px, 8vw, 110px);
   align-items: center;
-  padding-top: 76px;
+  padding-top: 78px;
   padding-bottom: 96px;
 }
 
@@ -46,6 +46,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 3 / 4;
+  border-radius: 180px 180px 14px 14px;
   object-fit: cover;
   object-position: 50% 57%;
 }
@@ -83,7 +84,8 @@
 
 .philosophy {
   padding-block: 88px;
-  background: #e6e0ea;
+  background: #e9e3ee;
+  border-radius: 32px 32px 0 0;
 }
 
 .philosophyGrid {
@@ -98,12 +100,12 @@
 }
 
 .principles {
-  border-top: 1px solid #3d304429;
+  border-top: 1px solid #493c5029;
 }
 
 .principles > div {
   padding: 24px 0;
-  border-bottom: 1px solid #3d304429;
+  border-bottom: 1px solid #493c5029;
 }
 
 .principles h3 {
@@ -152,13 +154,13 @@
 .film button > span {
   width: 64px;
   height: 64px;
-  background: #f6f3edf2;
+  background: #faf7f2f2;
 }
 
 .film button svg {
   width: 22px;
   height: 22px;
-  color: #3d3044;
+  color: #493c50;
 }
 
 .filmFooter,
@@ -177,7 +179,7 @@
 }
 
 .contactSection {
-  padding-top: 76px;
+  padding-top: 78px;
   padding-bottom: 84px;
 }
 
@@ -206,7 +208,8 @@
 
 .invitation {
   padding: 46px 48px 50px;
-  background: #e6e0ea;
+  background: #e9e3ee;
+  border-radius: 32px 32px 0 0;
 }
 
 .invitationTitle {
@@ -236,8 +239,8 @@
   justify-content: space-between;
   gap: 20px;
   padding: 24px 0;
-  border-top: 1px solid #3d304429;
-  color: #3d3044;
+  border-top: 1px solid #493c5029;
+  color: #493c50;
   text-decoration: none;
 }
 
@@ -269,7 +272,7 @@
 
 .location {
   padding-top: 24px;
-  border-top: 1px solid #3d304429;
+  border-top: 1px solid #493c5029;
 }
 
 .locationNote {
@@ -281,12 +284,12 @@
 
 .contactFooter {
   margin-top: 54px;
-  border-top: 1px solid #3d304429;
+  border-top: 1px solid #493c5029;
 }
 
 @media (max-width: 760px) {
   .main {
-    padding-top: 76px;
+    padding-top: 78px;
   }
 
   .title {
@@ -311,6 +314,7 @@
 
   .portrait {
     aspect-ratio: 3 / 4;
+  border-radius: 180px 180px 14px 14px;
     object-position: 50% 45%;
     max-height: 540px;
   }
