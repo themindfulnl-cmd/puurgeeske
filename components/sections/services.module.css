@@ -10,8 +10,8 @@
 }
 
 .intro h2 {
-  font-size: clamp(38px, 4vw, 52px);
-  line-height: 1.07;
+  font-size: var(--heading-section);
+  line-height: 1.2;
   letter-spacing: -.025em;
   margin: 17px 0 19px;
   font-weight: 400;
@@ -42,7 +42,7 @@
 
 .featuredCard .cardBody { padding: 24px; }
 .cardHeading { display: flex; justify-content: space-between; align-items: center; gap: 13px; }
-.cardHeading h3 { font-size: 33px; line-height: 1.14; letter-spacing: -.025em; font-weight: 400; }
+.cardHeading h3 { font-size: var(--heading-card); line-height: 1.25; letter-spacing: -.025em; font-weight: 400; }
 .arrow {
   width: 34px;
   height: 34px;
@@ -86,7 +86,7 @@
 .compactCard .cardLink { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: 17px; }
 .compactCard .imageWrap { height: 113px; border-radius: 45px 45px 6px 6px; }
 .smallLabel { color: #756079; font-size: 11px; line-height: 1.6; display: block; margin-bottom: 7px; }
-.compactCard h3 { font-size: 28px; line-height: 1.08; }
+.compactCard h3 { font-size: 22px; line-height: 1.25; }
 .compactCard .arrow { border: 0; width: 18px; height: 25px; }
 .compactCard .description { font-size: 14px; line-height: 1.75; margin-top: 11px; }
 .compactCard .practical { justify-content: flex-start; font-size: 12px; margin-top: 14px; }
@@ -117,9 +117,9 @@
   .featuredGrid, .personalGrid { gap: 22px; }
   .compactCard .cardLink { grid-template-columns: 1fr; gap: 13px; }
   .compactCard .imageWrap { height: 85px; border-radius: 7px; }
-  .compactCard h3 { font-size: 28px; }
+  .compactCard h3 { font-size: 22px; }
   .compactCard .arrow { display: none; }
-  .cardHeading h3 { font-size: 30px; }
+  .cardHeading h3 { font-size: var(--heading-card); }
   .featuredCard .cardBody { padding: 20px; }
   .featuredCard .description { min-height: 126px; }
 }
@@ -127,13 +127,13 @@
 @media (max-width: 700px) {
   .section { padding: 74px 0 66px; }
   .intro { margin-bottom: 35px; }
-  .intro h2 { font-size: 41px; }
+  .intro h2 { font-size: var(--heading-section); }
   .intro > p:last-child { font-size: 14px; max-width: 320px; margin-inline: auto; }
   .desktopBreak { display: none; }
   .featuredGrid { grid-template-columns: 1fr; gap: 38px; }
   .featuredCard .imageWrap { aspect-ratio: 1.28; }
   .featuredCard .cardBody { padding: 23px; }
-  .cardHeading h3 { font-size: 33px; }
+  .cardHeading h3 { font-size: var(--heading-card); }
   .description { font-size: 14px; }
   .featuredCard .description { min-height: auto; max-width: none; margin-top: 10px; }
   .practical { font-size: 12px; margin-top: 13px; }
@@ -144,7 +144,7 @@
   .personalGrid { grid-template-columns: 1fr; gap: 28px; }
   .compactCard .cardLink { grid-template-columns: 70px minmax(0, 1fr); gap: 18px; }
   .compactCard .imageWrap { height: 124px; border-radius: 45px 45px 6px 6px; }
-  .compactCard h3 { font-size: 29px; }
+  .compactCard h3 { font-size: 22px; }
   .compactCard .arrow { display: flex; }
   .smallLabel { font-size: 11px; }
   .compactCard .description { font-size: 14px; }

@@ -8,12 +8,12 @@ export function About() {
       <div className="about-collage">
         <div className="portrait-image"><Image src="/images/geeske-yoga-beach.jpg" alt="Geeske doet yoga op het strand" fill sizes="(max-width: 700px) 75vw, 390px" /></div>
         <div className="portrait-detail"><Image src="/images/coastal-ritual.webp" alt="Zachte materialen en een meditatiekussen in het zonlicht" fill sizes="(max-width: 700px) 35vw, 210px"/></div>
-        <div className="portrait-stamp"><span>Met aandacht</span><span className="stamp-flower" aria-hidden="true">✳</span><span>voor jou</span></div>
+        <div className="portrait-stamp"><Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske" width={108} height={108} sizes="(max-width: 800px) 90px, 108px" /></div>
         <p className="portrait-caption">Buiten zijn. Diep ademhalen. Gewoon jezelf.</p>
       </div>
       <div className="about-copy">
         <p className="eyebrow">Aangenaam, ik ben Geeske</p>
-        <h2 className="section-title">Je hoeft niets<br/>te worden.<br/><em>Je mag er zijn.</em></h2>
+        <h2 className="section-title">Je hoeft niets te worden.<br/><em>Je mag er zijn.</em></h2>
         <p className="intro-copy">Er is geen vaste manier om tot rust te komen. Wel een manier die bij jou past.</p>
         <p>Met yoga, pilates, ademwerk en lichaamswerk help ik je ruimte te maken voor jezelf. Soms door te bewegen, soms door juist even stil te staan. Altijd met persoonlijke aandacht.</p>
         <Link href="/over" className="text-link">Meer over Geeske <ArrowUpRight size={17}/></Link>

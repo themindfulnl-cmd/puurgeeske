@@ -33,3 +33,9 @@ The hero uses muted inline looping playback, with a 44px pause/play control. Red
 - Hero playback is muted and plays inline; the retained pause/resume and motion-preference implementation remains in place. Offscreen playback pauses.
 - FAQ opens and closes. Small text on lavender surfaces was darkened after review.
 - Public deployment is still blocked by access to the existing Vercel hosting scope. Local preview is http://localhost:3100/.
+
+## Typography and logo refinement
+
+Following review, reduced the homepage headline from 84px to 40px on desktop and 34px on mobile. Main section titles are now 30–34px, with service titles at 22–24px and secondary-page titles at 32–36px. Softer spacing and natural line wrapping keep the hierarchy calm. The supplied lotus logo now appears prominently above the centered hero title and beside Geeske’s portrait midway through the page.
+
+Production build, TypeScript and diff checks pass. Browser inspection confirmed the new heading sizes, loaded logos, and no horizontal overflow at 1280px and 390px. About-page mobile headings also fit without overflow.

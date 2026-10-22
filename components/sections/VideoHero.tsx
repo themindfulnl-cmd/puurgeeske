@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { HeroSea } from "@/components/ui/HeroSea";
 
@@ -8,8 +9,9 @@ export function VideoHero() {
       <HeroSea />
       <div className="hero-shade" />
       <div className="hero-content">
+        <Image src="/brand/puurgeeske-logo.png" alt="Puur Geeske — lotuslogo" width={132} height={132} sizes="(max-width: 600px) 112px, 132px" className="hero-logo anim-in" priority />
         <p className="eyebrow anim-in">Yoga, adem & aandacht</p>
-        <h1 id="hero-title" className="anim-in anim-d1">Even helemaal<br/><em>bij jezelf.</em></h1>
+        <h1 id="hero-title" className="anim-in anim-d1">Even helemaal <em>bij jezelf.</em></h1>
         <p className="hero-description anim-in anim-d2">Laat de dag even los. Beweeg, adem en vind<br className="desktop-break"/> jouw moment van rust bij Geeske.</p>
         <div className="hero-actions anim-in anim-d2"><Link href="#services" className="button-light">Vind jouw moment <ArrowUpRight size={18}/></Link></div>
       </div>

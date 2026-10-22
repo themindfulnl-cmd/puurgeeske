@@ -12,13 +12,13 @@
 .invitationTitle {
   font-family: var(--font-editorial), Georgia, serif;
   font-weight: 400;
-  letter-spacing: -0.035em;
-  line-height: 1.06;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
 }
 
 .title {
   margin: 24px 0 28px;
-  font-size: clamp(42px, 4.7vw, 56px);
+  font-size: clamp(32px, 3.2vw, 36px);
 }
 
 .title em,
@@ -96,7 +96,7 @@
 
 .sectionTitle {
   margin-top: 22px;
-  font-size: clamp(36px, 4vw, 48px);
+  font-size: var(--heading-section);
 }
 
 .principles {
@@ -214,7 +214,7 @@
 
 .invitationTitle {
   margin: 24px 0 20px;
-  font-size: 44px;
+  font-size: var(--heading-section);
 }
 
 .invitation > p:not(:first-child) {
@@ -293,7 +293,7 @@
   }
 
   .title {
-    font-size: 42px;
+    font-size: 32px;
   }
 
   .aboutIntro {
@@ -337,7 +337,7 @@
   }
 
   .sectionTitle {
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .filmSection {
@@ -393,7 +393,7 @@
 
   .invitationTitle {
     margin-top: 22px;
-    font-size: 38px;
+    font-size: 30px;
   }
 
   .contactDetails > p:first-child {
