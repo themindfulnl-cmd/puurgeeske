@@ -11,7 +11,7 @@ export default function BlogPage() {
   return (
     <div className="min-h-screen flex flex-col font-sans bg-background">
       <Navbar />
-      <main className="flex-grow pt-32 pb-24">
+      <main id="main-content" className="flex-grow pt-32 pb-24">
         <section className="container mx-auto px-4 md:px-6">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-16 space-y-4">

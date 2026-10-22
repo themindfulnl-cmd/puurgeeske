@@ -48,11 +48,11 @@ export default async function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <Navbar />
-      <main className="flex-grow">
+      <main id="main-content" className="flex-grow">
         <VideoHero />
+        <About />
         <Services />
         <Workshops events={events} />
-        <About />
         <SeasonVideo />
         <FAQ />
       </main>

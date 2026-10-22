@@ -1,18 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
-const inter = Inter({
+const editorial = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-editorial",
   display: "swap",
   preload: true,
 });
 
-const jakarta = Plus_Jakarta_Sans({
+const body = Manrope({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-body",
   display: "swap",
   preload: true,
 });
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     template: "%s · PuurGeeske",
   },
   description:
-    "Verbind met je ware zelf in alle rust en ruimte. Yoga, pilates, breathwork, massage en persoonlijke coaching bij Geeske.",
+    "Yoga, pilates, ademwerk en persoonlijke begeleiding in Hoofddorp. Ontdek het aanbod van Geeske en vind een les of sessie die bij je past.",
   keywords: [
     "yoga Hoofddorp",
     "pilates Hoofddorp",
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     siteName: "PuurGeeske",
     title: "PuurGeeske — Yoga, pilates en coaching in Hoofddorp",
     description:
-      "Verbind met je ware zelf in alle rust en ruimte. Maak kennis met Geeske.",
+      "Yoga en persoonlijke aandacht in Hoofddorp. Maak kennis met Geeske en ontdek wat bij je past.",
     images: [
       {
         url: "/brand/puurgeeske-logo.png",
@@ -57,7 +59,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "PuurGeeske — Yoga, pilates en coaching in Hoofddorp",
-    description: "Verbind met je ware zelf in alle rust en ruimte.",
+    description: "Yoga en persoonlijke aandacht in Hoofddorp.",
     images: ["/brand/puurgeeske-logo.png"],
   },
   robots: {
@@ -68,7 +70,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f8f5f0",
+  themeColor: "#f6f3ed",
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
@@ -78,7 +80,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="nl" suppressHydrationWarning>
+    <html lang="nl" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* Runs before first paint, so revealed sections never flash in and
             back out. Without it they simply stay visible. */}
@@ -88,7 +90,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.variable} ${jakarta.variable} antialiased`}>
+      <body className={`${editorial.variable} ${body.variable} antialiased`}>
         {children}
         <ScrollReveal />
       </body>

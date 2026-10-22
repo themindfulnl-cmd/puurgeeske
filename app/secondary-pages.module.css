@@ -1,0 +1,416 @@
+.page {
+  color: #3d3044;
+  background: #f6f3ed;
+}
+
+.main {
+  padding-top: 88px;
+}
+
+.title,
+.sectionTitle,
+.invitationTitle {
+  font-family: var(--font-editorial), Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.06;
+}
+
+.title {
+  margin: 24px 0 28px;
+  font-size: clamp(42px, 4.7vw, 56px);
+}
+
+.title em,
+.sectionTitle em {
+  font-weight: 400;
+  color: #796382;
+}
+
+.aboutIntro {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: clamp(50px, 8vw, 110px);
+  align-items: center;
+  padding-top: 76px;
+  padding-bottom: 96px;
+}
+
+.portraitWrap {
+  width: 100%;
+  max-width: 405px;
+}
+
+.portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: 50% 57%;
+}
+
+.imageCaption {
+  margin-top: 15px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: #796382;
+  text-transform: uppercase;
+}
+
+.aboutCopy {
+  padding: 18px 0;
+}
+
+.lead {
+  max-width: 440px;
+  margin-bottom: 24px;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.bodyCopy {
+  max-width: 440px;
+  margin-bottom: 32px;
+  color: #665e69;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.bodyCopy p + p {
+  margin-top: 16px;
+}
+
+.philosophy {
+  padding-block: 88px;
+  background: #e6e0ea;
+}
+
+.philosophyGrid {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr;
+  gap: clamp(50px, 8vw, 110px);
+}
+
+.sectionTitle {
+  margin-top: 22px;
+  font-size: clamp(36px, 4vw, 48px);
+}
+
+.principles {
+  border-top: 1px solid #3d304429;
+}
+
+.principles > div {
+  padding: 24px 0;
+  border-bottom: 1px solid #3d304429;
+}
+
+.principles h3 {
+  margin: 0 0 9px;
+  font-family: var(--font-body), Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.principles p {
+  margin: 0;
+  max-width: 440px;
+  color: #665e69;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.filmSection {
+  padding-top: 94px;
+  padding-bottom: 76px;
+}
+
+.filmHeading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 38px;
+}
+
+.filmHeading > p {
+  max-width: 260px;
+  margin-bottom: 5px;
+  color: #665e69;
+  font-size: 13px;
+  line-height: 1.85;
+}
+
+.film > div {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.film button > span {
+  width: 64px;
+  height: 64px;
+  background: #f6f3edf2;
+}
+
+.film button svg {
+  width: 22px;
+  height: 22px;
+  color: #3d3044;
+}
+
+.filmFooter,
+.contactFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 28px;
+  font-size: 13px;
+}
+
+.filmFooter p,
+.contactFooter p {
+  color: #665e69;
+}
+
+.contactSection {
+  padding-top: 76px;
+  padding-bottom: 84px;
+}
+
+.contactHeading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.contactHeading .title {
+  margin-top: 24px;
+  margin-bottom: 22px;
+}
+
+.contactLead {
+  color: #665e69;
+  font-size: 14px;
+  line-height: 1.9;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1fr 0.92fr;
+  gap: clamp(48px, 9vw, 114px);
+  align-items: center;
+}
+
+.invitation {
+  padding: 46px 48px 50px;
+  background: #e6e0ea;
+}
+
+.invitationTitle {
+  margin: 24px 0 20px;
+  font-size: 44px;
+}
+
+.invitation > p:not(:first-child) {
+  max-width: 340px;
+  margin-bottom: 30px;
+  color: #665e69;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.invitation > a {
+  max-width: 100%;
+}
+
+.contactDetails > p:first-child {
+  margin-bottom: 28px;
+}
+
+.contactMethod {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 0;
+  border-top: 1px solid #3d304429;
+  color: #3d3044;
+  text-decoration: none;
+}
+
+.contactMethod > svg {
+  flex-shrink: 0;
+  transition: transform 180ms ease;
+}
+
+.contactMethod:hover > svg {
+  transform: translate(3px, -3px);
+}
+
+.methodLabel {
+  display: block;
+  margin-bottom: 9px;
+  color: #796382;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.methodValue {
+  display: block;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.location {
+  padding-top: 24px;
+  border-top: 1px solid #3d304429;
+}
+
+.locationNote {
+  margin-top: 7px;
+  color: #665e69;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.contactFooter {
+  margin-top: 54px;
+  border-top: 1px solid #3d304429;
+}
+
+@media (max-width: 760px) {
+  .main {
+    padding-top: 76px;
+  }
+
+  .title {
+    font-size: 42px;
+  }
+
+  .aboutIntro {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    padding-top: 42px;
+    padding-bottom: 56px;
+  }
+
+  .aboutCopy {
+    grid-row: 1;
+    padding: 0;
+  }
+
+  .portraitWrap {
+    max-width: 100%;
+  }
+
+  .portrait {
+    aspect-ratio: 3 / 4;
+    object-position: 50% 45%;
+    max-height: 540px;
+  }
+
+  .lead {
+    font-size: 16px;
+  }
+
+  .bodyCopy {
+    font-size: 13px;
+  }
+
+  .philosophy {
+    padding-block: 56px;
+  }
+
+  .philosophyGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .sectionTitle {
+    font-size: 38px;
+  }
+
+  .filmSection {
+    padding-top: 56px;
+    padding-bottom: 52px;
+  }
+
+  .filmHeading {
+    display: block;
+    margin-bottom: 28px;
+  }
+
+  .filmHeading > p {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+
+  .film button > span {
+    width: 50px;
+    height: 50px;
+  }
+
+  .filmFooter,
+  .contactFooter {
+    flex-direction: column;
+    align-items: start;
+    gap: 12px;
+    padding-top: 24px;
+  }
+
+  .contactSection {
+    padding-top: 44px;
+    padding-bottom: 56px;
+  }
+
+  .contactHeading {
+    text-align: left;
+    margin-bottom: 34px;
+  }
+
+  .contactHeading .title {
+    margin-top: 22px;
+  }
+
+  .contactGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .invitation {
+    padding: 32px 28px 36px;
+  }
+
+  .invitationTitle {
+    margin-top: 22px;
+    font-size: 38px;
+  }
+
+  .contactDetails > p:first-child {
+    margin-bottom: 22px;
+  }
+
+  .contactMethod {
+    padding-block: 22px;
+  }
+
+  .methodValue {
+    font-size: 16px;
+  }
+
+  .contactFooter {
+    margin-top: 36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contactMethod > svg {
+    transition: none;
+  }
+}

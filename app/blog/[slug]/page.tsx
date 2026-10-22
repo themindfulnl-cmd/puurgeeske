@@ -77,7 +77,7 @@ export default async function BlogPostPage({
   return (
     <div className="min-h-screen flex flex-col font-sans bg-background">
       <Navbar />
-      <main className="flex-grow pt-32 pb-24">
+      <main id="main-content" className="flex-grow pt-32 pb-24">
         <article className="container mx-auto px-4 md:px-6 max-w-3xl">
           {/* Back Link */}
           <Link

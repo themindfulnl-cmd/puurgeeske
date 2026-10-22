@@ -12,7 +12,7 @@
   {
     "id": "yin",
     "title": "Yin Yoga",
-    "description": "Langzaam bewegen, langer in een houding blijven en de tijd nemen om te verzachten.",
+    "description": "Neem de tijd om te vertragen. Je blijft langer in een houding, met aandacht voor wat je voelt.",
     "icon": "Flower2",
     "duration": "Lessen & workshops",
     "price": "",
@@ -22,7 +22,7 @@
   {
     "id": "coaching",
     "title": "Wandelcoaching",
-    "description": "Persoonlijke begeleiding in de natuur, afgestemd op jouw behoeften.",
+    "description": "Persoonlijke begeleiding tijdens een wandeling in de natuur.",
     "icon": "User",
     "duration": "90 minuten",
     "price": "€70",
@@ -42,7 +42,7 @@
   {
     "id": "massage",
     "title": "Soul Sense Massage",
-    "description": "Kies uit ontspanningsmassage, shiatsu, nekwerk of voetreflexologie. Ook aan huis.",
+    "description": "Ontspanningsmassage, shiatsu, nekwerk of voetreflexologie. Ook aan huis.",
     "icon": "Heart",
     "duration": "30 / 60 / 90 minuten",
     "price": "€35 / €70 / €100",
@@ -52,7 +52,7 @@
   {
     "id": "groepen",
     "title": "Samen beleven",
-    "description": "Privélessen en yoga- of ademworkshops voor bedrijven, verjaardagen en vrienden.",
+    "description": "Privélessen en yoga- of ademworkshops voor vrienden, verjaardagen en bedrijven.",
     "icon": "Activity",
     "duration": "Op aanvraag",
     "price": "",
